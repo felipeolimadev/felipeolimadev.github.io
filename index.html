@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,6 +55,10 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #09090b; }
         ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 10px; }
+        
+        /* Evita flash de conteúdo antes da tradução */
+        [data-i18n] { visibility: hidden; }
+        .lang-loaded [data-i18n] { visibility: visible; }
     </style>
 </head>
 <body class="selection:bg-indigo-500/30 selection:text-indigo-200">
@@ -68,18 +72,18 @@
             </a>
             
             <div class="hidden md:flex items-center gap-10 text-[10px] uppercase tracking-[0.2em] font-medium text-zinc-500">
-                <a href="#home" class="nav-link hover:text-white">Home</a>
-                <a href="#stacks" class="nav-link hover:text-white">Stacks</a>
-                <a href="#projects" class="nav-link hover:text-white">Projetos</a>
-                <a href="#contact" class="nav-link hover:text-white">Contato</a>
+                <a href="#home" class="nav-link hover:text-white" data-i18n="nav_home">Home</a>
+                <a href="#stacks" class="nav-link hover:text-white" data-i18n="nav_stacks">Stacks</a>
+                <a href="#projects" class="nav-link hover:text-white" data-i18n="nav_projects">Projects</a>
+                <a href="#contact" class="nav-link hover:text-white" data-i18n="nav_contact">Contact</a>
             </div>
 
             <div class="flex items-center gap-4">
                 <a href="https://github.com/felipeolimadev/" target="_blank" class="text-zinc-500 hover:text-white transition-colors">
                     <i data-lucide="github" class="w-4 h-4"></i>
                 </a>
-                <a href="#contact" class="text-[10px] uppercase tracking-widest border border-white/20 px-5 py-2 hover:bg-white hover:text-black transition-all">
-                    Contato
+                <a href="#contact" class="text-[10px] uppercase tracking-widest border border-white/20 px-5 py-2 hover:bg-white hover:text-black transition-all" data-i18n="nav_contact_btn">
+                    Contact
                 </a>
             </div>
         </div>
@@ -89,28 +93,26 @@
     <section id="home" class="relative min-h-screen flex items-center pt-28 pb-20 px-6 soft-glow overflow-hidden">
         <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            <!-- Hero Text Content -->
-            <!-- Removido o 'order-2' para que o texto suba naturalmente no mobile -->
             <div class="space-y-6 md:space-y-8 text-center md:text-left">
                 <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/5 text-indigo-400 text-[10px] uppercase tracking-widest font-semibold">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                     </span>
-                    Open to work
+                    <span data-i18n="hero_status">Open to work</span>
                 </div>
                 
                 <h1 class="text-5xl sm:text-6xl lg:text-8xl font-light tracking-tighter leading-[1.1] md:leading-[0.9] text-balance">
-                    Transformando código em <span class="text-zinc-500 font-normal">experiência.</span>
+                    <span data-i18n="hero_title">Transforming code into <span class="text-zinc-500 font-normal">experience.</span></span>
                 </h1>
                 
-                <p class="text-zinc-400 text-base md:text-lg max-w-md mx-auto md:mx-0 font-light leading-relaxed">
-                    Software Engineer especializado em ecossistemas <span class="text-white">Android</span> nativo e interfaces <span class="text-white">Front-end</span> modernas com React.
+                <p class="text-zinc-400 text-base md:text-lg max-w-md mx-auto md:mx-0 font-light leading-relaxed" data-i18n="hero_subtitle">
+                    Software Engineer specialized in native <span class="text-white">Android</span> ecosystems and modern <span class="text-white">Front-end</span> interfaces with React.
                 </p>
 
                 <div class="flex items-center justify-center md:justify-start gap-8 pt-4">
                     <a href="#projects" class="group flex items-center gap-3 text-sm font-medium tracking-wide">
-                        Explorar Projetos
+                        <span data-i18n="hero_cta">Explore Projects</span>
                         <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
                             <i data-lucide="chevron-right" class="w-4 h-4"></i>
                         </span>
@@ -118,20 +120,15 @@
                 </div>
             </div>
 
-            <!-- Hero Image Container -->
-            <!-- Removido o 'order-1' para que a imagem fique abaixo do texto no mobile -->
             <div class="relative flex justify-center items-center px-4 md:px-0">
                 <div class="relative w-full max-w-[320px] md:max-w-none md:w-[90%] aspect-[4/5] bg-zinc-900 rounded-sm overflow-hidden border border-white/5 group shadow-2xl">
-                    <!-- Placeholder/Profile Image -->
                     <img 
                         src="profile.png" 
                         alt="Felipe Lima" 
                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-[1.02] group-hover:scale-100"
-                        onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop'"
+                        onerror="this.src='profile.png'"
                     >
-                    
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-                    
                     <div class="absolute top-0 right-0 p-4">
                         <div class="w-12 h-12 border-t border-r border-white/20"></div>
                     </div>
@@ -145,29 +142,26 @@
         <div class="max-w-6xl mx-auto">
             <div class="mb-20">
                 <span class="text-indigo-400 text-[10px] uppercase tracking-[0.3em] font-bold block mb-4">Core Stacks</span>
-                <h2 class="text-4xl font-light tracking-tight">Especialidades <span class="italic text-zinc-500">Técnicas</span>.</h2>
+                <h2 class="text-4xl font-light tracking-tight"><span data-i18n="stacks_title">Technical <span class="italic text-zinc-500">Specialties</span>.</span></h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-                <!-- Stack Android -->
                 <div class="bg-[#09090b] p-10 lg:p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
                     <i data-lucide="smartphone" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
                     <h3 class="text-xl font-medium tracking-tight">Android Native</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Desenvolvimento moderno com <b>Kotlin</b> e <b>Jetpack Compose</b>. Foco em arquitetura MVVM, fluxos reativos e persistência robusta.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed" data-i18n="stack_android_desc">Modern development with <b>Kotlin</b> and <b>Jetpack Compose</b>. Focused on MVVM architecture, reactive flows, and robust persistence.</p>
                 </div>
                 
-                <!-- Stack Front-end -->
                 <div class="bg-[#09090b] p-10 lg:p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
                     <i data-lucide="layers" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
                     <h3 class="text-xl font-medium tracking-tight">Front-end Development</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Criação de interfaces web de alta fidelidade com <b>React</b> e <b>Tailwind CSS</b>. Foco em performance e componentes reutilizáveis.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed" data-i18n="stack_frontend_desc">High-fidelity web interface creation with <b>React</b> and <b>Tailwind CSS</b>. Focused on performance and reusable components.</p>
                 </div>
 
-                <!-- Stack Data -->
                 <div class="bg-[#09090b] p-10 lg:p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
                     <i data-lucide="database" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
                     <h3 class="text-xl font-medium tracking-tight">Data & State Management</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Domínio em gerenciamento de estado complexo e persistência offline. Experiência com Room (Android) e Context API/Redux (Web).</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed" data-i18n="stack_data_desc">Mastery in complex state management and offline persistence. Experience with Room (Android) and Context API/Redux (Web).</p>
                 </div>
             </div>
         </div>
@@ -177,11 +171,10 @@
     <section id="projects" class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-between items-end mb-16">
-                <h2 class="text-5xl font-light tracking-tighter">Projetos <span class="text-zinc-600">Recentes</span></h2>
+                <h2 class="text-5xl font-light tracking-tighter"><span data-i18n="projects_section_title">Recent <span class="text-zinc-600">Projects</span></span></h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <!-- Glyph Notes Project -->
                 <div class="group cursor-pointer">
                     <div class="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-6 border border-white/5">
                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -192,8 +185,8 @@
                             <h4 class="text-xl font-medium tracking-tight">Glyph Notes</h4>
                             <span class="text-[10px] text-zinc-600 border border-zinc-800 px-2 py-1 uppercase">Android Native</span>
                         </div>
-                        <p class="text-zinc-500 text-sm font-light leading-relaxed">
-                            App focado em anotações rápidas com <b>Jetpack Compose</b>. Implementa arquitetura limpa, widgets de tela inicial e sistema de tags para organização inteligente offline com <b>Room</b>.
+                        <p class="text-zinc-500 text-sm font-light leading-relaxed" data-i18n="project_glyph_desc">
+                            Quick notes app built with <b>Jetpack Compose</b>. Implements clean architecture, home screen widgets, and smart tag organization with <b>Room</b>.
                         </p>
                         <div class="flex gap-4 pt-2">
                             <span class="text-[10px] text-indigo-400 font-mono">Kotlin</span>
@@ -204,7 +197,6 @@
                     </div>
                 </div>
 
-                <!-- Outro Projeto (Exemplo) -->
                 <div class="group cursor-pointer">
                     <div class="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-6 border border-white/5">
                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -215,7 +207,7 @@
                             <h4 class="text-xl font-medium tracking-tight">Portfolio v2</h4>
                             <span class="text-[10px] text-zinc-600 border border-zinc-800 px-2 py-1 uppercase">Web Development</span>
                         </div>
-                        <p class="text-zinc-500 text-sm font-light">Landing page minimalista desenvolvida com React e Tailwind, focada em performance e design responsivo impecável.</p>
+                        <p class="text-zinc-500 text-sm font-light" data-i18n="project_portfolio_desc">Minimalist landing page developed with React and Tailwind, focused on performance and flawless responsive design.</p>
                         <div class="flex gap-4 pt-2">
                             <span class="text-[10px] text-indigo-400 font-mono">React</span>
                             <span class="text-[10px] text-indigo-400 font-mono">Tailwind</span>
@@ -230,7 +222,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-32 px-6 border-t border-white/5 bg-zinc-950/50">
         <div class="max-w-3xl mx-auto text-center space-y-12">
-            <h2 class="text-5xl md:text-7xl font-light tracking-tighter">Pronto para a próxima <span class="italic text-zinc-400 underline decoration-indigo-500/30 underline-offset-8">build</span>?</h2>
+            <h2 class="text-5xl md:text-7xl font-light tracking-tighter" data-i18n="contact_title">Ready for the next <span class="italic text-zinc-400 underline decoration-indigo-500/30 underline-offset-8">build</span>?</h2>
             
             <div class="pt-8">
                 <a href="mailto:felipeolimadev@gmail.com" class="text-xl sm:text-2xl md:text-4xl font-light hover:text-indigo-400 transition-colors border-b border-white/10 pb-2 break-all">
@@ -251,25 +243,94 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-zinc-600 text-[9px] uppercase tracking-widest font-medium">
             <p>&copy; 2025 Felipe Lima.</p>
             <div class="flex gap-8">
-                <span>Android & Front-end Engineering</span>
+                <span data-i18n="footer_specialty">Android & Front-end Engineering</span>
                 <span id="current-time"></span>
             </div>
         </div>
     </footer>
 
     <script>
-        lucide.createIcons();
-
-        // Update time
-        function updateTime() {
-            const now = new Date();
-            const timeEl = document.getElementById('current-time');
-            if (timeEl) {
-                timeEl.innerText = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        // --- Internazionalização (i18n) ---
+        const translations = {
+            en: {
+                nav_home: "Home",
+                nav_stacks: "Stacks",
+                nav_projects: "Projects",
+                nav_contact: "Contact",
+                nav_contact_btn: "Contact",
+                hero_status: "Open to work",
+                hero_title: 'Transforming code into <span class="text-zinc-500 font-normal">experience.</span>',
+                hero_subtitle: 'Software Engineer specialized in native <span class="text-white">Android</span> ecosystems and modern <span class="text-white">Front-end</span> interfaces with React.',
+                hero_cta: "Explore Projects",
+                stacks_title: 'Technical <span class="italic text-zinc-500">Specialties</span>.',
+                stack_android_desc: "Modern development with <b>Kotlin</b> and <b>Jetpack Compose</b>. Focused on MVVM architecture, reactive flows, and robust persistence.",
+                stack_frontend_desc: "High-fidelity web interface creation with <b>React</b> and <b>Tailwind CSS</b>. Focused on performance and reusable components.",
+                stack_data_desc: "Mastery in complex state management and offline persistence. Experience with Room (Android) and Context API/Redux (Web).",
+                projects_section_title: 'Recent <span class="text-zinc-600">Projects</span>',
+                project_glyph_desc: "Quick notes app built with <b>Jetpack Compose</b>. Implements clean architecture, home screen widgets, and smart tag organization with <b>Room</b>.",
+                project_portfolio_desc: "Minimalist landing page developed with React and Tailwind, focused on performance and flawless responsive design.",
+                contact_title: 'Ready for the next <span class="italic text-zinc-400 underline decoration-indigo-500/30 underline-offset-8">build</span>?',
+                footer_specialty: "Android & Front-end Engineering"
+            },
+            pt: {
+                nav_home: "Início",
+                nav_stacks: "Stacks",
+                nav_projects: "Projetos",
+                nav_contact: "Contato",
+                nav_contact_btn: "Contato",
+                hero_status: "Disponível para trabalho",
+                hero_title: 'Transformando código em <span class="text-zinc-500 font-normal">experiência.</span>',
+                hero_subtitle: 'Software Engineer especializado em ecossistemas <span class="text-white">Android</span> nativo e interfaces <span class="text-white">Front-end</span> modernas com React.',
+                hero_cta: "Explorar Projetos",
+                stacks_title: 'Especialidades <span class="italic text-zinc-500">Técnicas</span>.',
+                stack_android_desc: "Desenvolvimento moderno com <b>Kotlin</b> e <b>Jetpack Compose</b>. Foco em arquitetura MVVM, fluxos reativos e persistência robusta.",
+                stack_frontend_desc: "Criação de interfaces web de alta fidelidade com <b>React</b> e <b>Tailwind CSS</b>. Foco em performance e componentes reutilizáveis.",
+                stack_data_desc: "Domínio em gerenciamento de estado complexo e persistência offline. Experiência com Room (Android) e Context API/Redux (Web).",
+                projects_section_title: 'Projetos <span class="text-zinc-600">Recentes</span>',
+                project_glyph_desc: "App focado em anotações rápidas com <b>Jetpack Compose</b>. Implementa arquitetura limpa, widgets de tela inicial e sistema de tags para organização inteligente offline com <b>Room</b>.",
+                project_portfolio_desc: "Landing page minimalista desenvolvida com React e Tailwind, focada em performance e design responsivo impecável.",
+                contact_title: 'Pronto para a próxima <span class="italic text-zinc-400 underline decoration-indigo-500/30 underline-offset-8">build</span>?',
+                footer_specialty: "Engenharia Android & Front-end"
             }
+        };
+
+        function applyLanguage() {
+            // Detecta se o idioma do navegador começa com 'pt' (ex: pt-BR, pt-PT)
+            const userLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
+            
+            // Atualiza o atributo lang do HTML
+            document.documentElement.lang = userLang;
+
+            // Busca todos os elementos com o atributo data-i18n
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[userLang][key]) {
+                    el.innerHTML = translations[userLang][key];
+                }
+            });
+
+            // Adiciona classe para mostrar o conteúdo após carregar a tradução
+            document.body.classList.add('lang-loaded');
         }
-        setInterval(updateTime, 1000);
-        updateTime();
+
+        // --- Inicialização ---
+        window.addEventListener('DOMContentLoaded', () => {
+            applyLanguage();
+            lucide.createIcons();
+            
+            // Update time
+            function updateTime() {
+                const now = new Date();
+                const timeEl = document.getElementById('current-time');
+                if (timeEl) {
+                    timeEl.innerText = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                }
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+        });
     </script>
 </body>
 </html>
