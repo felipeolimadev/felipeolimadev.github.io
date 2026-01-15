@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android & Web Developer | Portfolio</title>
+    <title>Felipe Lima | Android & Front-end Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -85,10 +85,13 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section id="home" class="relative min-h-screen flex items-center pt-20 px-6 soft-glow overflow-hidden">
-        <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-20 items-center">
-            <div class="space-y-8">
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-20 px-6 soft-glow overflow-hidden">
+        <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            <!-- Hero Text Content -->
+            <!-- Removido o 'order-2' para que o texto suba naturalmente no mobile -->
+            <div class="space-y-6 md:space-y-8 text-center md:text-left">
                 <div class="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-indigo-500/20 bg-indigo-500/5 text-indigo-400 text-[10px] uppercase tracking-widest font-semibold">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
@@ -97,15 +100,15 @@
                     Open to work
                 </div>
                 
-                <h1 class="text-6xl md:text-8xl font-light tracking-tighter leading-[0.9] text-balance">
+                <h1 class="text-5xl sm:text-6xl lg:text-8xl font-light tracking-tighter leading-[1.1] md:leading-[0.9] text-balance">
                     Transformando código em <span class="text-zinc-500 font-normal">experiência.</span>
                 </h1>
                 
-                <p class="text-zinc-400 text-lg max-w-md font-light leading-relaxed">
-                    Software Engineer especializado em ecossistemas <span class="text-white">Android</span> nativo e aplicações <span class="text-white">Web</span> escaláveis.
+                <p class="text-zinc-400 text-base md:text-lg max-w-md mx-auto md:mx-0 font-light leading-relaxed">
+                    Software Engineer especializado em ecossistemas <span class="text-white">Android</span> nativo e interfaces <span class="text-white">Front-end</span> modernas com React.
                 </p>
 
-                <div class="flex items-center gap-8 pt-4">
+                <div class="flex items-center justify-center md:justify-start gap-8 pt-4">
                     <a href="#projects" class="group flex items-center gap-3 text-sm font-medium tracking-wide">
                         Explorar Projetos
                         <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
@@ -115,21 +118,20 @@
                 </div>
             </div>
 
-            <div class="relative hidden md:flex justify-center items-center">
-                <!-- Image Container - Reduced size by 10% (w-[90%]) -->
-                <div class="relative w-[90%] aspect-[4/5] bg-zinc-900 rounded-sm overflow-hidden border border-white/5 group shadow-2xl">
-                    <!-- Your Picture -->
+            <!-- Hero Image Container -->
+            <!-- Removido o 'order-1' para que a imagem fique abaixo do texto no mobile -->
+            <div class="relative flex justify-center items-center px-4 md:px-0">
+                <div class="relative w-full max-w-[320px] md:max-w-none md:w-[90%] aspect-[4/5] bg-zinc-900 rounded-sm overflow-hidden border border-white/5 group shadow-2xl">
+                    <!-- Placeholder/Profile Image -->
                     <img 
                         src="profile.png" 
                         alt="Felipe Lima" 
                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-[1.02] group-hover:scale-100"
-                        onerror="this.src='profile.png'"
+                        onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop'"
                     >
                     
-                    <!-- Subtle Gradient Overlay -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
                     
-                    <!-- Decorative Corner -->
                     <div class="absolute top-0 right-0 p-4">
                         <div class="w-12 h-12 border-t border-r border-white/20"></div>
                     </div>
@@ -138,7 +140,7 @@
         </div>
     </section>
 
-    <!-- Stacks -->
+    <!-- Stacks Section -->
     <section id="stacks" class="py-32 px-6 border-t border-white/5">
         <div class="max-w-6xl mx-auto">
             <div class="mb-20">
@@ -146,32 +148,32 @@
                 <h2 class="text-4xl font-light tracking-tight">Especialidades <span class="italic text-zinc-500">Técnicas</span>.</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-1px bg-white/5 border border-white/5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
                 <!-- Stack Android -->
-                <div class="bg-[#09090b] p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
+                <div class="bg-[#09090b] p-10 lg:p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
                     <i data-lucide="smartphone" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
                     <h3 class="text-xl font-medium tracking-tight">Android Native</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Desenvolvimento robusto com Kotlin, Jetpack Compose, Coroutines e MVVM/Clean Architecture.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Desenvolvimento moderno com <b>Kotlin</b> e <b>Jetpack Compose</b>. Foco em arquitetura MVVM, fluxos reativos e persistência robusta.</p>
                 </div>
                 
-                <!-- Stack Web -->
-                <div class="bg-[#09090b] p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
-                    <i data-lucide="globe" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
+                <!-- Stack Front-end -->
+                <div class="bg-[#09090b] p-10 lg:p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
+                    <i data-lucide="layers" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
                     <h3 class="text-xl font-medium tracking-tight">Front-end Development</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Criação de interfaces modernas e performáticas com React e Next.js, utilizando Tailwind CSS para estilização eficiente e escalável.</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Criação de interfaces web de alta fidelidade com <b>React</b> e <b>Tailwind CSS</b>. Foco em performance e componentes reutilizáveis.</p>
                 </div>
 
-                <!-- Stack Backend/Cloud -->
-                <div class="bg-[#09090b] p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
-                    <i data-lucide="server" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
-                    <h3 class="text-xl font-medium tracking-tight">UI/UX & Responsividade</h3>
-                    <p class="text-zinc-500 text-sm leading-relaxed">Foco total na experiência do usuário, transformando designs complexos em layouts responsivos, acessíveis e otimizados para todos os dispositivos.</p>
+                <!-- Stack Data -->
+                <div class="bg-[#09090b] p-10 lg:p-12 space-y-6 group hover:bg-zinc-900/50 transition-colors">
+                    <i data-lucide="database" class="w-6 h-6 text-zinc-500 group-hover:text-indigo-400 transition-colors"></i>
+                    <h3 class="text-xl font-medium tracking-tight">Data & State Management</h3>
+                    <p class="text-zinc-500 text-sm leading-relaxed">Domínio em gerenciamento de estado complexo e persistência offline. Experiência com Room (Android) e Context API/Redux (Web).</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects Section -->
     <section id="projects" class="py-32 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-between items-end mb-16">
@@ -179,47 +181,67 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <!-- Android Project -->
+                <!-- Glyph Notes Project -->
                 <div class="group cursor-pointer">
                     <div class="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-6 border border-white/5">
                         <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-700">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="space-y-2">
                         <div class="flex justify-between items-center">
                             <h4 class="text-xl font-medium tracking-tight">Glyph Notes</h4>
                             <span class="text-[10px] text-zinc-600 border border-zinc-800 px-2 py-1 uppercase">Android Native</span>
                         </div>
-                        <p class="text-zinc-500 text-sm font-light">App para anotações rápidas com Kotlin e Jetpack Compose. Foco em arquitetura MVVM, interfaces declarativas e persistência de dados offline com Room.</p>
+                        <p class="text-zinc-500 text-sm font-light leading-relaxed">
+                            App focado em anotações rápidas com <b>Jetpack Compose</b>. Implementa arquitetura limpa, widgets de tela inicial e sistema de tags para organização inteligente offline com <b>Room</b>.
+                        </p>
                         <div class="flex gap-4 pt-2">
                             <span class="text-[10px] text-indigo-400 font-mono">Kotlin</span>
                             <span class="text-[10px] text-indigo-400 font-mono">Compose</span>
                             <span class="text-[10px] text-indigo-400 font-mono">Room</span>
+                            <span class="text-[10px] text-indigo-400 font-mono">Material 3</span>
                         </div>
                     </div>
                 </div>
 
-                
+                <!-- Outro Projeto (Exemplo) -->
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-[16/10] bg-zinc-900 overflow-hidden mb-6 border border-white/5">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl font-medium tracking-tight">Portfolio v2</h4>
+                            <span class="text-[10px] text-zinc-600 border border-zinc-800 px-2 py-1 uppercase">Web Development</span>
+                        </div>
+                        <p class="text-zinc-500 text-sm font-light">Landing page minimalista desenvolvida com React e Tailwind, focada em performance e design responsivo impecável.</p>
+                        <div class="flex gap-4 pt-2">
+                            <span class="text-[10px] text-indigo-400 font-mono">React</span>
+                            <span class="text-[10px] text-indigo-400 font-mono">Tailwind</span>
+                            <span class="text-[10px] text-indigo-400 font-mono">Lucide</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="py-32 px-6 border-t border-white/5 bg-zinc-950/50">
         <div class="max-w-3xl mx-auto text-center space-y-12">
             <h2 class="text-5xl md:text-7xl font-light tracking-tighter">Pronto para a próxima <span class="italic text-zinc-400 underline decoration-indigo-500/30 underline-offset-8">build</span>?</h2>
             
             <div class="pt-8">
-                <a href="mailto:felipeolimadev@gmail.com" class="text-2xl md:text-4xl font-light hover:text-indigo-400 transition-colors border-b border-white/10 pb-2">
+                <a href="mailto:felipeolimadev@gmail.com" class="text-xl sm:text-2xl md:text-4xl font-light hover:text-indigo-400 transition-colors border-b border-white/10 pb-2 break-all">
                     felipeolimadev@gmail.com
                 </a>
             </div>
 
-            <div class="flex justify-center gap-12 text-zinc-500 text-[10px] uppercase tracking-[0.4em] font-bold">
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-zinc-500 text-[10px] uppercase tracking-[0.4em] font-bold">
                 <a href="https://github.com/felipeolimadev" class="hover:text-white transition-colors">GitHub</a>
                 <a href="https://www.linkedin.com/in/felipe-l-909464297/" class="hover:text-white transition-colors">LinkedIn</a>
-                <a href="Felipe Lima-resume.pdf" class="hover:text-white transition-colors">CV.pdf</a>
+                <a href="#" class="hover:text-white transition-colors">CV.pdf</a>
             </div>
         </div>
     </section>
@@ -229,7 +251,7 @@
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-zinc-600 text-[9px] uppercase tracking-widest font-medium">
             <p>&copy; 2025 Felipe Lima.</p>
             <div class="flex gap-8">
-                <span>Android & Web Engineering</span>
+                <span>Android & Front-end Engineering</span>
                 <span id="current-time"></span>
             </div>
         </div>
@@ -241,7 +263,10 @@
         // Update time
         function updateTime() {
             const now = new Date();
-            document.getElementById('current-time').innerText = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const timeEl = document.getElementById('current-time');
+            if (timeEl) {
+                timeEl.innerText = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            }
         }
         setInterval(updateTime, 1000);
         updateTime();
